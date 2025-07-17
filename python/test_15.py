@@ -1,5 +1,7 @@
 import pytest
 from typing import List
+from collections import defaultdict
+
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         if len(nums) < 3:
@@ -7,15 +9,40 @@ class Solution:
         
         output_set = set()
 
+        a_scanned = set()
         for a in range(0,len(nums)-2):
+            num_a = nums[a]
+            if num_a in a_scanned:
+                continue
+            else:
+                a_scanned.add(num_a)
+
+            b_scanned = set()
             for b in range(a+1, len(nums)-1):
+                num_b = nums[b]
+                if num_b in b_scanned:
+                    continue
+                else:
+                    b_scanned.add(num_b)
+
+                num_c = -(num_a+num_b)
+
+                sorted_nums = sorted([num_a,num_b,num_c])
+                tup = (sorted_nums[0],sorted_nums[1])
+
+                if tup in output_set:
+                    continue
+
                 for c in range(b+1,len(nums)-0):
-                    if nums[a] + nums[b] + nums[c] == 0 :
-                        output_set.add(tuple(sorted([nums[a], nums[b], nums[c]])))
+                    if nums[c] == num_c:    
+                        output_set.add(tup)
+                        break
+                b_scanned.add(num_c)
 
         output_list = list(output_set)
         output_list.sort()
-        output_list = list(map(lambda x: list(x), output_list))
+        output_list = list(map(lambda x: [x[0], x[1], -(x[0] + x[1])], output_list))
+        print(f"output list is {output_list}")
         return output_list
         
 def test_0s():
