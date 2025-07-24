@@ -11,7 +11,7 @@ class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         
         # prime the list with a dummy value to avoid special cases
-        new_list_head = ListNode(200)
+        new_list_head = ListNode()
         new_list_cur = new_list_head
 
         cur1 = list1
