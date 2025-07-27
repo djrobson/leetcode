@@ -29,9 +29,8 @@ impl Solution {
                     return false;
                 }
             }
-
         }
-        return parens.len() == 0; 
+        return parens.len() == 0;
     }
 }
 
