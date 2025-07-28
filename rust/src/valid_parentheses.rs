@@ -8,21 +8,21 @@ impl Solution {
             if c == '(' || c == '{' || c == '[' {
                 parens.push(c);
             } else if c == ')' {
-                if parens.len() == 0 {
+                if parens.is_empty() {
                     return false;
                 }
                 if parens.pop().unwrap() != '(' {
                     return false;
                 }
             } else if c == ']' {
-                if parens.len() == 0 {
+                if parens.is_empty() {
                     return false;
                 }
                 if parens.pop().unwrap() != '[' {
                     return false;
                 }
             } else if c == '}' {
-                if parens.len() == 0 {
+                if parens.is_empty() {
                     return false;
                 }
                 if parens.pop().unwrap() != '{' {
@@ -30,7 +30,7 @@ impl Solution {
                 }
             }
         }
-        return parens.len() == 0;
+        parens.is_empty()
     }
 }
 
