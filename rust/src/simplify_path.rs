@@ -3,10 +3,9 @@
 
 impl Solution {
     pub fn simplify_path(path: String) -> String {
-
         let filtered: Vec<&str> = path
             .split('/')
-            .filter(|dir|!dir.is_empty() && !dir.eq(&"."))
+            .filter(|dir| !dir.is_empty() && !dir.eq(&"."))
             .collect();
 
         let mut dirs_removed: Vec<&str> = Vec::new();
