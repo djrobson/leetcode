@@ -1,2 +1,3 @@
-/target
-.leet.toml
+rust/target
+rust/.leet.toml
+*.md

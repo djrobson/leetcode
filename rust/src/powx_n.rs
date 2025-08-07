@@ -38,10 +38,9 @@ impl Solution {
             }
         }
 
-        // general solution using loops
+        // binary exponentiation for O(log n) performance
         let mut exponent = n;
-        let mut result = 1.0;
-        let mult = 
+        let mut base = 
             if exponent < 0 {
                 // get the reciprocal
                 exponent = -exponent;
@@ -49,8 +48,14 @@ impl Solution {
             } else {
                 x
             };
-        for _ in 0..exponent {
-            result = result * mult;
+        
+        let mut result = 1.0;
+        while exponent > 0 {
+            if exponent % 2 == 1 {
+                result *= base;
+            }
+            base *= base;
+            exponent /= 2;
         }
         result
     }
