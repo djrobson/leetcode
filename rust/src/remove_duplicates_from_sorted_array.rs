@@ -22,6 +22,18 @@ mod tests {
     #[rstest]
     #[case([1,1,2].to_vec(), 2, [1,2].to_vec())]
     #[case([0,0,1,1,1,2,2,3,3,4].to_vec(), 5, [0,1,2,3,4].to_vec())]
+    // Edge Cases
+    #[case([1].to_vec(), 1, [1].to_vec())] // Single element
+    #[case([1,1,1,1,1].to_vec(), 1, [1].to_vec())] // All same elements
+    // Boundary Values
+    #[case([1,2,3,4,5,6,7,8,9,10].to_vec(), 10, [1,2,3,4,5,6,7,8,9,10].to_vec())] // No duplicates
+    #[case([-100].to_vec(), 1, [-100].to_vec())] // Minimum constraint value
+    #[case([100].to_vec(), 1, [100].to_vec())] // Maximum constraint value
+    #[case([-100,-100,100,100].to_vec(), 2, [-100,100].to_vec())] // Min/max with duplicates
+    // Various patterns
+    #[case([1,1,2,2,3,3].to_vec(), 3, [1,2,3].to_vec())] // Pairs of duplicates
+    #[case([1,2,2,2,3].to_vec(), 3, [1,2,3].to_vec())] // Multiple consecutive duplicates
+    #[case([-3,-1,0,0,0,3,3].to_vec(), 4, [-3,-1,0,3].to_vec())] // Mixed positive/negative
     fn test_remove_dup(
         #[case] mut nums: Vec<i32>,
         #[case] expected: i32,

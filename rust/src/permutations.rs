@@ -37,8 +37,21 @@ mod tests {
     #[case(vec![1,2,3], vec![vec![1,2,3],vec![1,3,2],vec![2,1,3],vec![2,3,1],vec![3,2,1],vec![3,1,2]])]
     #[case(vec![0,1], vec![vec![0,1],vec![1,0]])]
     #[case(vec![1], vec![vec![1]])]
+    // Negative numbers
+    #[case(vec![-1], vec![vec![-1]])]
+    #[case(vec![-1, -2], vec![vec![-1,-2], vec![-2,-1]])]
+    #[case(vec![-10, 10], vec![vec![-10,10], vec![10,-10]])]
+    // Boundary constraints (n=1 to 6, values -10 to 10)
+    #[case(vec![-10], vec![vec![-10]])]
+    #[case(vec![10], vec![vec![10]])]
+    #[case(vec![-1, 0, 1], vec![vec![-1,0,1],vec![-1,1,0],vec![0,-1,1],vec![0,1,-1],vec![1,0,-1],vec![1,-1,0]])]
+    // Descending input order
+    #[case(vec![5,4,3,2], vec![vec![5,4,3,2],vec![5,4,2,3],vec![5,3,4,2],vec![5,3,2,4],vec![5,2,3,4],vec![5,2,4,3],vec![4,5,3,2],vec![4,5,2,3],vec![4,3,5,2],vec![4,3,2,5],vec![4,2,5,3],vec![4,2,3,5],vec![3,4,5,2],vec![3,4,2,5],vec![3,5,4,2],vec![3,5,2,4],vec![3,2,4,5],vec![3,2,5,4],vec![2,4,3,5],vec![2,4,5,3],vec![2,3,4,5],vec![2,3,5,4],vec![2,5,3,4],vec![2,5,4,3]])]
     fn case(#[case] nums: Vec<i32>, #[case] expected: Vec<Vec<i32>>) {
-        let actual = Solution::permute(nums);
+        let mut actual = Solution::permute(nums);
+        let mut expected = expected;
+        actual.sort();
+        expected.sort();
         assert_eq!(actual, expected);
     }
 }
