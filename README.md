@@ -1,6 +1,6 @@
 # LeetCode Solutions
 
-A dual-language LeetCode solutions repository with comprehensive test coverage in both Rust and Python.
+A dual-language LeetCode solutions repository with comprehensive test coverage in both Rust and Python. I start by solving each challenge by hand to practice my programming craft, then work with an AI Agent to improve and maintain the repo. This lets me also practice modern agentic collaboration.
 
 ## Repository Structure
 
