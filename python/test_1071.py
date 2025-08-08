@@ -1,23 +1,22 @@
 def gcdOfStrings(str1: str, str2: str) -> str:
-    longest = ""
+    def gcd(a: int, b: int) -> int:
+        while b:
+            a, b = b, a % b
+        return a
 
-    for span in range(1, min(len(str1), len(str2)) + 1):
-        # filter out all the offsets that don't divide into the full strings
-        if len(str1) % span != 0 or len(str2) % span != 0:
-            continue
+    # Handle empty strings
+    if not str1 or not str2:
+        return ""
 
-        # check if the prefix matches
-        if str1[:span] == str2[:span]:
-            # check if the prefix repeats for the rest of the first string
-            print(f"{len(str1)} {span}")
-            fullstr1 = str1[:span] * (len(str1) // span)
-            if fullstr1 == str1:
-                # check is the prefix repeats for the rest of the second string
-                fullstr2 = str2[:span] * (len(str2) // span)
-                if fullstr2 == str2:
-                    longest = str1[:span]
+    # If str1 + str2 != str2 + str1, no common divisor exists
+    if str1 + str2 != str2 + str1:
+        return ""
 
-    return longest
+    # The GCD length is the GCD of the two string lengths
+    gcd_length = gcd(len(str1), len(str2))
+
+    # Return the prefix of that length
+    return str1[:gcd_length]
 
 
 # Test cases
