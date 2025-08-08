@@ -3,7 +3,6 @@
 
 impl Solution {
     pub fn my_pow(x: f64, n: i32) -> f64 {
-
         // special cases for x
         if n == 0 {
             return 1.0;
@@ -24,22 +23,21 @@ impl Solution {
             let abs_x = x.abs();
             return match (abs_x > 1.0, n > 0) {
                 (true, true) => f64::INFINITY,   // |x| > 1, n > 0: grows to infinity
-                (true, false) => 0.0,           // |x| > 1, n < 0: shrinks to zero
-                (false, true) => 0.0,           // |x| < 1, n > 0: shrinks to zero
+                (true, false) => 0.0,            // |x| > 1, n < 0: shrinks to zero
+                (false, true) => 0.0,            // |x| < 1, n > 0: shrinks to zero
                 (false, false) => f64::INFINITY, // |x| < 1, n < 0: grows to infinity
             };
         }
 
         // binary exponentiation for O(log n) performance
         let mut exponent = n;
-        let mut base =
-            if exponent < 0 {
-                // get the reciprocal
-                exponent = -exponent;
-                1.0/x
-            } else {
-                x
-            };
+        let mut base = if exponent < 0 {
+            // get the reciprocal
+            exponent = -exponent;
+            1.0 / x
+        } else {
+            x
+        };
 
         let mut result = 1.0;
         while exponent > 0 {
@@ -52,7 +50,6 @@ impl Solution {
         result
     }
 }
-
 
 // << ---------------- Code below here is only for local use ---------------- >>
 
