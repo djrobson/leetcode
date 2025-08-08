@@ -13,35 +13,24 @@ class Solution:
         self, list1: Optional[ListNode], list2: Optional[ListNode]
     ) -> Optional[ListNode]:
         # prime the list with a dummy value to avoid special cases
-        new_list_head = ListNode()
-        new_list_cur = new_list_head
+        dummy = ListNode()
+        current = dummy
 
-        cur1 = list1
-        cur2 = list2
+        # Reuse existing nodes instead of creating new ones
+        while list1 and list2:
+            if list1.val <= list2.val:
+                current.next = list1
+                list1 = list1.next
+            else:
+                current.next = list2
+                list2 = list2.next
+            current = current.next
 
-        while True:
-            match (cur1, cur2):
-                case (None, None):
-                    break
-                case (None, y):
-                    new_list_cur.next = ListNode(y.val)
-                    cur2 = cur2.next
-                    new_list_cur = new_list_cur.next
-                case (x, None):
-                    new_list_cur.next = ListNode(x.val)
-                    cur1 = cur1.next
-                    new_list_cur = new_list_cur.next
-                case (x, y) if x.val < y.val:
-                    new_list_cur.next = ListNode(x.val)
-                    cur1 = cur1.next
-                    new_list_cur = new_list_cur.next
-                case (x, y) if x.val >= y.val:
-                    new_list_cur.next = ListNode(y.val)
-                    cur2 = cur2.next
-                    new_list_cur = new_list_cur.next
+        # Attach remaining nodes (at most one will be non-null)
+        current.next = list1 or list2
 
-        # skip the initial dummy value
-        return new_list_head.next
+        # Return the merged list, skipping the dummy node
+        return dummy.next
 
 
 def test_empty():

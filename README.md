@@ -23,7 +23,7 @@ A dual-language LeetCode solutions repository with comprehensive test coverage i
 | [15. 3Sum](https://leetcode.com/problems/3sum) | ❌ | ✅ | Medium | O(n²) | O(1) | ✅ |
 | [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number) | ❌ | ✅ | Medium | O(4ⁿ) | O(4ⁿ) | ✅ |
 | [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses) | ✅ | ❌ | Easy | O(n) | O(n) | ✅ |
-| [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | ❌ | ✅ | Easy | O(m+n) | O(m+n) | ⚠️ O(1) space |
+| [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists) | ❌ | ✅ | Easy | O(m+n) | O(1) | ✅ |
 | [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses) | ❌ | ✅ | Medium | O(4ⁿ/√n) | O(4ⁿ/√n) | ✅ |
 | [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs) | ❌ | ✅ | Medium | O(n) | O(1) | ✅ |
 | [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array) | ✅ | ❌ | Easy | O(n) | O(1) | ✅ |
