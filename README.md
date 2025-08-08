@@ -86,7 +86,7 @@ This repository uses:
 2. Create virtual environment and install dependencies:
    ```bash
    uv venv
-   uv pip install -e ".[dev]"
+   uv pip install pytest flake8 black isort pre-commit
    ```
 
 3. Activate the virtual environment:
