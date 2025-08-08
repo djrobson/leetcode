@@ -1,3 +1,31 @@
-rust/target
+# Rust
+rust/target/
 rust/.leet.toml
-*.md
+Cargo.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.egg-info/
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+*.tmp
+.cache/
