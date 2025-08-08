@@ -72,19 +72,38 @@ This repository uses:
 - **pre-commit hooks** for automatic code formatting
 - **Comprehensive test coverage** with edge cases and boundary testing
 
-### Setting up pre-commit hooks
+### Setting up the development environment
 
-1. Install pre-commit:
+1. Install uv (if not already installed):
    ```bash
-   pip install pre-commit
+   # Windows
+   powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+   
+   # macOS/Linux
+   curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
 
-2. Install the hooks:
+2. Create virtual environment and install dependencies:
+   ```bash
+   uv venv
+   uv pip install -e ".[dev]"
+   ```
+
+3. Activate the virtual environment:
+   ```bash
+   # Windows
+   .venv\Scripts\activate
+   
+   # macOS/Linux
+   source .venv/bin/activate
+   ```
+
+4. Install pre-commit hooks:
    ```bash
    pre-commit install
    ```
 
-3. (Optional) Run hooks on all files:
+5. (Optional) Run hooks on all files:
    ```bash
    pre-commit run --all-files
    ```
