@@ -11,7 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `cargo build` - Build the project
 - `cargo clippy` - Run linter for code quality checks
 
-### Python (lc_python/ directory)
+### Python (python/ directory)
 - `pytest` - Run all Python tests
 - `pytest <test_file.py>` - Run a specific test file (e.g., `pytest test_21.py`)
 - `pytest -v` - Run tests with verbose output
@@ -25,7 +25,7 @@ This is a dual-language LeetCode solutions repository with:
   - Solutions follow LeetCode's expected signature format but include a local `Solution` struct for testing
   - Uses Rust 1.79 (pinned to match LeetCode environment)
   
-- **lc_python/**: Python solutions with test files
+- **python/**: Python solutions with test files
   - Each file follows pattern `test_<problem_number>.py`
   - Uses pytest framework for testing
   - Includes complete problem implementations with test cases
