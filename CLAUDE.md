@@ -24,7 +24,7 @@ This is a dual-language LeetCode solutions repository with:
   - Each problem is implemented as a module in `src/` with comprehensive test cases using rstest
   - Solutions follow LeetCode's expected signature format but include a local `Solution` struct for testing
   - Uses Rust 1.79 (pinned to match LeetCode environment)
-  
+
 - **python/**: Python solutions with test files
   - Each file follows pattern `test_<problem_number>.py`
   - Uses pytest framework for testing
@@ -38,7 +38,7 @@ This is a dual-language LeetCode solutions repository with:
 - Code above `// << ---------------- Code below here is only for local use ---------------- >>` comment is the actual LeetCode submission
 - All modules are declared in `lib.rs`
 
-### Python Solutions  
+### Python Solutions
 - Each test file contains both the `Solution` class and test functions
 - Uses pytest for testing framework
 - Includes custom data structures when needed (e.g., `ListNode` for linked list problems)

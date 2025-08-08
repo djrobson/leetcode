@@ -1,5 +1,8 @@
-import pytest
 from typing import List
+
+import pytest
+
+
 class Solution:
 
     def increasingTriplet(self, nums: List[int]) -> bool:
@@ -7,10 +10,10 @@ class Solution:
 
         if len(nums) < 3:
             return False
-        
+
         for n in nums:
-            # scan for a small first number, 
-            # if it's smaller than a previous known one, 
+            # scan for a small first number,
+            # if it's smaller than a previous known one,
             # then it's universally better then the old one
             if n <= first:
                 first = n
@@ -21,7 +24,7 @@ class Solution:
             else:
                 # we found something that was larger than first and second, Success!
                 return True
-    
+
         return False
 
 # pytest cases for increasingTriplet

@@ -1,5 +1,7 @@
-import pytest
 from typing import List
+
+import pytest
+
 
 def productExceptSelf(nums: List[int]) -> List[int]:
 

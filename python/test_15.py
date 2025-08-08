@@ -1,6 +1,8 @@
-import pytest
-from typing import List
 from collections import defaultdict
+from typing import List
+
+import pytest
+
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -17,7 +19,7 @@ class Solution:
             if nums[i] > 0:
                 # no negative numbers left so all remaining sequences that can't subtract to 0
                 break
-        
+
             l = i+1
             r = len(nums)-1
             while l<r :
@@ -36,9 +38,9 @@ class Solution:
                         l += 1
                     while nums[r] == cur_r and r >0:
                         r -= 1
-            
+
         return output
-    
+
 def test_0s():
     input = [0,0,0]
     s = Solution()

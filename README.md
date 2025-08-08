@@ -10,7 +10,7 @@ A dual-language LeetCode solutions repository with comprehensive test coverage i
 - **Version**: Rust 1.79 (pinned to match LeetCode environment)
 - **Pattern**: Each problem implemented as a module with local `Solution` struct
 
-### Python Solutions (`python/`)  
+### Python Solutions (`python/`)
 - **Framework**: pytest with individual test files
 - **Pattern**: Each file follows `test_<problem_number>.py` format
 - **Testing**: Includes complete problem implementations with test cases
@@ -42,7 +42,7 @@ cargo check                   # Quick compile check
 cargo clippy                  # Linter
 ```
 
-### Python Tests  
+### Python Tests
 ```bash
 cd python
 pytest                        # All tests
@@ -78,7 +78,7 @@ This repository uses:
    ```bash
    # Windows
    powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-   
+
    # macOS/Linux
    curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
@@ -93,7 +93,7 @@ This repository uses:
    ```bash
    # Windows
    .venv\Scripts\activate
-   
+
    # macOS/Linux
    source .venv/bin/activate
    ```

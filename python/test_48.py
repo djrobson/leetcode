@@ -1,5 +1,7 @@
-import pytest
 from typing import List
+
+import pytest
+
 
 def rotate(matrix: List[List[int]]) -> None:
     """
@@ -19,7 +21,7 @@ def rotate(matrix: List[List[int]]) -> None:
             matrix[bottom_left[1]][bottom_left[0]] = matrix[bottom_right[1]][bottom_right[0]]
             matrix[bottom_right[1]][bottom_right[0]] = matrix[top_right[1]][top_right[0]]
             matrix[top_right[1]][top_right[0]] = old_top_left
-        
+
 def test_1x1():
     input = [[1]]
     rotate(input)

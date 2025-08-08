@@ -1,5 +1,7 @@
-import pytest
 from typing import List
+
+import pytest
+
 
 class Solution:
     digits = {
@@ -24,13 +26,13 @@ class Solution:
                 #  append every possible mapping
                 for l in self.digits[digit]:
                     new_output.append(f"{out}{l}")
-                
+
             output = new_output
 
         if output[0] == "":
             output = []
         return output
-    
+
 def test_empty():
     input = ""
     s = Solution()

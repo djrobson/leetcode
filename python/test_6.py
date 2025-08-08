@@ -1,5 +1,7 @@
-import pytest
 from typing import List
+
+import pytest
+
 
 def convert(s: str, numRows: int) -> str:
     output = ""
@@ -12,13 +14,13 @@ def convert(s: str, numRows: int) -> str:
                 if chunk + offset < len(s):
                     output += s[chunk + offset]
             chunk += stride_size
-        
+
     return output
 
 def get_stride(numRows:int) -> int:
     if numRows <= 2:
         return numRows
-    
+
     return 2+((numRows -2)*2)
 
 def get_offsets_in_stride(stride_size:int) -> List[List[int]]:
@@ -28,10 +30,10 @@ def get_offsets_in_stride(stride_size:int) -> List[List[int]]:
         if sequence == 0:
             # the top row
             output.append([0])
-        elif sequence == ((stride_size // 2)): 
+        elif sequence == ((stride_size // 2)):
             # the bottom row
             output.append([sequence])
-        else: 
+        else:
             # some middle row
             output.append([sequence,stride_size - sequence])
 

@@ -24,7 +24,7 @@ impl Solution {
             let abs_x = x.abs();
             return match (abs_x > 1.0, n > 0) {
                 (true, true) => f64::INFINITY,   // |x| > 1, n > 0: grows to infinity
-                (true, false) => 0.0,           // |x| > 1, n < 0: shrinks to zero  
+                (true, false) => 0.0,           // |x| > 1, n < 0: shrinks to zero
                 (false, true) => 0.0,           // |x| < 1, n > 0: shrinks to zero
                 (false, false) => f64::INFINITY, // |x| < 1, n < 0: grows to infinity
             };
@@ -32,7 +32,7 @@ impl Solution {
 
         // binary exponentiation for O(log n) performance
         let mut exponent = n;
-        let mut base = 
+        let mut base =
             if exponent < 0 {
                 // get the reciprocal
                 exponent = -exponent;
@@ -40,7 +40,7 @@ impl Solution {
             } else {
                 x
             };
-        
+
         let mut result = 1.0;
         while exponent > 0 {
             if exponent % 2 == 1 {

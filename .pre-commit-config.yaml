@@ -13,18 +13,18 @@ repos:
     hooks:
       - id: cargo-fmt
         name: cargo fmt
-        entry: cargo fmt
+        entry: bash
         language: system
-        files: \.rs$
-        args: ["--"]
+        files: rust/.*\.rs$
+        args: ["-c", "cd rust && cargo fmt --"]
         pass_filenames: false
-        
+
       - id: cargo-clippy
         name: cargo clippy
-        entry: cargo clippy
+        entry: bash
         language: system
-        files: \.rs$
-        args: ["--", "-D", "warnings"]
+        files: rust/.*\.rs$
+        args: ["-c", "cd rust && cargo clippy -- -D warnings"]
         pass_filenames: false
 
   # Python formatting and linting

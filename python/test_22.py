@@ -1,14 +1,16 @@
-import pytest
 from typing import List
+
+import pytest
+
 
 class Solution:
     output: List[str] = []
     def generateParenthesis(self, n: int) -> List[str]:
         self.output = []
         self.generateNext(0,0,n,"")
-            
+
         return self.output
-    
+
     def generateNext(self, num_open: int, num_closed: int, n:int, me: str) -> List[str]:
         if num_closed == n:
             # we're done, add this one to the list

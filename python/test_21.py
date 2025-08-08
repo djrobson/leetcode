@@ -1,5 +1,7 @@
-import pytest
 from typing import Optional
+
+import pytest
+
 
 # Definition for singly-linked list.
 class ListNode:
@@ -9,7 +11,7 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        
+
         # prime the list with a dummy value to avoid special cases
         new_list_head = ListNode()
         new_list_cur = new_list_head
@@ -40,7 +42,7 @@ class Solution:
 
         # skip the initial dummy value
         return new_list_head.next
-    
+
 def test_empty():
     input = ""
     s = Solution()

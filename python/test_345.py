@@ -1,5 +1,6 @@
 import pytest
 
+
 def reverseVowels(s: str) -> str:
     vowels = "aeiouAEIOU"
     input_str = list(s)
@@ -53,4 +54,3 @@ def test_reverseVowels_empty_string():
 
 def test_reverseVowels_special_characters():
     assert reverseVowels("h@llo! w&rld") == "h@llo! w&rld", "Failed with special characters and no vowel changes"
-
