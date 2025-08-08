@@ -18,6 +18,7 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
       with:
         toolchain: "1.79"
+        components: clippy
 
     - name: Cache dependencies
       uses: actions/cache@v3
