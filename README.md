@@ -31,7 +31,7 @@ A dual-language LeetCode solutions repository with comprehensive test coverage i
 | [48. Rotate Image](https://leetcode.com/problems/rotate-image) | ❌ | ✅ | Medium | O(n²) | O(1) | ✅ |
 | [50. Pow(x, n)](https://leetcode.com/problems/powx-n) | ✅ | ❌ | Medium | O(log n) | O(1) | ✅ |
 | [71. Simplify Path](https://leetcode.com/problems/simplify-path) | ✅ | ❌ | Medium | O(n) | O(n) | ✅ |
-| [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self) | ❌ | ✅ | Medium | O(n) | O(n) | ⚠️ O(1) extra space |
+| [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self) | ❌ | ✅ | Medium | O(n) | O(1) | ✅ |
 | [334. Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence) | ❌ | ✅ | Medium | O(n) | O(1) | ✅ |
 | [345. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string) | ❌ | ✅ | Medium | O(n) | O(n) | ✅ |
 | [1071. Greatest Common Divisor of Strings](https://leetcode.com/problems/greatest-common-divisor-of-strings) | ❌ | ✅ | Easy | O(m+n) | O(1) | ✅ |

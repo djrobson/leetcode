@@ -2,33 +2,25 @@ from typing import List
 
 
 def productExceptSelf(nums: List[int]) -> List[int]:
-    num_count = len(nums)
-    fwd_product = 1
-    fwd_nums = []
+    n = len(nums)
+    result = [1] * n
 
-    for num in nums:
-        fwd_nums.append(fwd_product)
-        fwd_product *= num
+    # First pass: calculate left products and store in result array
+    # result[i] will contain the product of all elements to the left of nums[i]
+    left_product = 1
+    for i in range(n):
+        result[i] = left_product
+        left_product *= nums[i]
 
-    back_product = 1
-    back_nums = []
-    for num in reversed(nums):
-        back_nums.append(back_product)
-        back_product *= num
+    # Second pass: multiply by right products in-place
+    # For each position, multiply the left product (already in result[i])
+    # by the product of all elements to the right
+    right_product = 1
+    for i in range(n - 1, -1, -1):
+        result[i] *= right_product  # left_product * right_product
+        right_product *= nums[i]
 
-    prod_except_self = []
-
-    for i in range(num_count):
-        pre_prod = 1
-        if i > 0:
-            pre_prod = fwd_nums[i]
-
-        post_prod = 1
-        if i < num_count - 1:
-            post_prod = back_nums[num_count - i - 1]
-        prod_except_self.append(pre_prod * post_prod)
-
-    return prod_except_self
+    return result
 
 
 def test_productExceptSelf_positive_numbers():
