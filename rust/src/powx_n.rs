@@ -19,7 +19,7 @@ impl Solution {
         }
 
         // special cases for huge exponents (use more aggressive threshold)
-        let abs_n = n.abs() as u32;
+        let abs_n = n.unsigned_abs();
         if abs_n > 100_000 {
             let abs_x = x.abs();
             return match (abs_x > 1.0, n > 0) {
