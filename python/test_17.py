@@ -1,7 +1,5 @@
 from typing import List
 
-import pytest
-
 
 class Solution:
     digits = {
@@ -25,8 +23,8 @@ class Solution:
             # for every prefix in the output
             for out in output:
                 #  append every possible mapping
-                for l in self.digits[digit]:
-                    new_output.append(f"{out}{l}")
+                for left in self.digits[digit]:
+                    new_output.append(f"{out}{left}")
 
             output = new_output
 

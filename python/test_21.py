@@ -1,7 +1,5 @@
 from typing import Optional
 
-import pytest
-
 
 # Definition for singly-linked list.
 class ListNode:
@@ -47,14 +45,12 @@ class Solution:
 
 
 def test_empty():
-    input = ""
     s = Solution()
     output = s.mergeTwoLists(None, None)
     assert output == None, "Failed with empty"
 
 
 def test_one_empty():
-    input = ""
     s = Solution()
     output = s.mergeTwoLists(None, ListNode(0))
     expected = ListNode(0)
@@ -65,7 +61,6 @@ def test_one_empty():
 
 
 def test_both():
-    input = ""
     s = Solution()
     output = s.mergeTwoLists(
         ListNode(1, ListNode(2, ListNode(3))), ListNode(1, ListNode(3, ListNode(4)))

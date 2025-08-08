@@ -1,6 +1,3 @@
-import pytest
-
-
 def reverseVowels(s: str) -> str:
     vowels = "aeiouAEIOU"
     input_str = list(s)

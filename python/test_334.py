@@ -1,7 +1,5 @@
 from typing import List
 
-import pytest
-
 
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
@@ -18,7 +16,7 @@ class Solution:
                 first = n
             elif n <= second:
                 # this is larger than the first, but still smaller than the second
-                # we want the smalled middle possible to support the smallest last possible
+                # we want the smallest middle possible for the smallest last possible
                 second = n
             else:
                 # we found something that was larger than first and second, Success!

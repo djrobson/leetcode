@@ -1,7 +1,5 @@
 from typing import List
 
-import pytest
-
 
 def productExceptSelf(nums: List[int]) -> List[int]:
     num_count = len(nums)

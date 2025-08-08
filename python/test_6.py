@@ -1,7 +1,5 @@
 from typing import List
 
-import pytest
-
 
 def convert(s: str, numRows: int) -> str:
     output = ""

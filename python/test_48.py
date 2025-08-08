@@ -1,7 +1,5 @@
 from typing import List
 
-import pytest
-
 
 def rotate(matrix: List[List[int]]) -> None:
     """

@@ -14,28 +14,28 @@ class Solution:
                 continue
 
             if nums[i] > 0:
-                # no negative numbers left 
+                # no negative numbers left
                 # so all remaining sequences can't subtract to 0
                 break
 
-            l = i + 1
-            r = len(nums) - 1
-            while l < r:
-                sum = nums[i] + nums[l] + nums[r]
+            left = i + 1
+            right = len(nums) - 1
+            while left < right:
+                sum = nums[i] + nums[left] + nums[right]
                 if sum > 0:
-                    r = r - 1
+                    right = right - 1
                 elif sum < 0:
-                    l = l + 1
+                    left = left + 1
                 else:  # sum == 0
-                    output.append([nums[i], nums[l], nums[r]])
+                    output.append([nums[i], nums[left], nums[right]])
 
                     # fast forward the ends towards each other
-                    cur_l = nums[l]
-                    cur_r = nums[r]
-                    while nums[l] == cur_l and l < len(nums) - 1:
-                        l += 1
-                    while nums[r] == cur_r and r > 0:
-                        r -= 1
+                    cur_left = nums[left]
+                    cur_right = nums[right]
+                    while nums[left] == cur_left and left < len(nums) - 1:
+                        left += 1
+                    while nums[right] == cur_right and right > 0:
+                        right -= 1
 
         return output
 

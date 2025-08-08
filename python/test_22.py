@@ -1,7 +1,5 @@
 from typing import List
 
-import pytest
-
 
 class Solution:
     output: List[str] = []
